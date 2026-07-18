@@ -74,7 +74,7 @@ banner = f'''<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="400" v
 </svg>'''
 
 # --- marquee -------------------------------------------------------------
-PHRASE = "CODE ✦ DESIGN ✦ MUSIC ✦ WATERLOO ✦ " * 5
+PHRASE = "CODE ✦ DESIGN ✦ MUSIC ✦ " * 7
 SEG = 1250  # textLength pins the rendered width so the loop is seamless
 marquee = f'''<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="56" viewBox="0 0 1000 56" font-family="Helvetica, Arial, sans-serif" role="img" aria-label="code, design, music, waterloo">
   {STYLE}
@@ -87,7 +87,7 @@ marquee = f'''<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="56" v
   </g>
 </svg>'''
 
-for name, svg in (("banner.svg", banner), ("marquee.svg", marquee)):
+for name, svg in (("assets/header.svg", banner), ("assets/marquee.svg", marquee)):
     with open(name, "w", encoding="utf-8") as f:
         f.write(svg)
     print(f"{name}: {len(svg) / 1024:.0f} KB")

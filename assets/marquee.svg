@@ -11,8 +11,8 @@
   <line class="rule" x1="0" y1="1" x2="1000" y2="1" stroke-width="1" stroke-opacity="0.35"/>
   <line class="rule" x1="0" y1="55" x2="1000" y2="55" stroke-width="1" stroke-opacity="0.35"/>
   <g>
-    <text class="mut" x="0" y="34" font-size="13" letter-spacing="4" textLength="1250" lengthAdjust="spacingAndGlyphs">CODE ✦ DESIGN ✦ MUSIC ✦ WATERLOO ✦ CODE ✦ DESIGN ✦ MUSIC ✦ WATERLOO ✦ CODE ✦ DESIGN ✦ MUSIC ✦ WATERLOO ✦ CODE ✦ DESIGN ✦ MUSIC ✦ WATERLOO ✦ CODE ✦ DESIGN ✦ MUSIC ✦ WATERLOO ✦ </text>
-    <text class="mut" x="1250" y="34" font-size="13" letter-spacing="4" textLength="1250" lengthAdjust="spacingAndGlyphs">CODE ✦ DESIGN ✦ MUSIC ✦ WATERLOO ✦ CODE ✦ DESIGN ✦ MUSIC ✦ WATERLOO ✦ CODE ✦ DESIGN ✦ MUSIC ✦ WATERLOO ✦ CODE ✦ DESIGN ✦ MUSIC ✦ WATERLOO ✦ CODE ✦ DESIGN ✦ MUSIC ✦ WATERLOO ✦ </text>
+    <text class="mut" x="0" y="34" font-size="13" letter-spacing="4" textLength="1250" lengthAdjust="spacingAndGlyphs">CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ </text>
+    <text class="mut" x="1250" y="34" font-size="13" letter-spacing="4" textLength="1250" lengthAdjust="spacingAndGlyphs">CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ </text>
     <animateTransform attributeName="transform" type="translate" from="0 0" to="-1250 0" dur="30s" repeatCount="indefinite"/>
   </g>
 </svg>
