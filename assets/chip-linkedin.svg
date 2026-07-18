@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="170" height="44" viewBox="0 0 170 44" font-family="Helvetica, Arial, sans-serif" role="img" aria-label="linkedin">
+  <style>
+    :root { --ink: #12120F; }
+    @media (prefers-color-scheme: dark) { :root { --ink: #ECEAE3; } }
+    .ink { fill: var(--ink); }
+    .mut { fill: var(--ink); fill-opacity: 0.5; }
+    .rule { stroke: var(--ink); }
+    .faint { stroke: var(--ink); stroke-opacity: 0.09; }
+    .wire { stroke: var(--ink); fill: none; }
+    .box { stroke: var(--ink); stroke-opacity: 0.4; fill: none; }
+  </style>
+  <rect class="box" x="0.5" y="0.5" width="169" height="43" stroke-width="1"/>
+  <text class="ink" x="85" y="27" font-size="12.5" letter-spacing="3" text-anchor="middle">LINKEDIN ↗</text>
+</svg>
