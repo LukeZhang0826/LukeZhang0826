@@ -7,6 +7,7 @@
     .rule { stroke: var(--ink); }
     .faint { stroke: var(--ink); stroke-opacity: 0.09; }
     .wire { stroke: var(--ink); fill: none; }
+    .box { stroke: var(--ink); stroke-opacity: 0.4; fill: none; }
   </style>
   <line class="faint" x1="64.0" y1="30" x2="64.0" y2="370" stroke-width="1"/><line class="faint" x1="136.7" y1="30" x2="136.7" y2="370" stroke-width="1"/><line class="faint" x1="209.3" y1="30" x2="209.3" y2="370" stroke-width="1"/><line class="faint" x1="282.0" y1="30" x2="282.0" y2="370" stroke-width="1"/><line class="faint" x1="354.7" y1="30" x2="354.7" y2="370" stroke-width="1"/><line class="faint" x1="427.3" y1="30" x2="427.3" y2="370" stroke-width="1"/><line class="faint" x1="500.0" y1="30" x2="500.0" y2="370" stroke-width="1"/><line class="faint" x1="572.7" y1="30" x2="572.7" y2="370" stroke-width="1"/><line class="faint" x1="645.3" y1="30" x2="645.3" y2="370" stroke-width="1"/><line class="faint" x1="718.0" y1="30" x2="718.0" y2="370" stroke-width="1"/><line class="faint" x1="790.7" y1="30" x2="790.7" y2="370" stroke-width="1"/><line class="faint" x1="863.3" y1="30" x2="863.3" y2="370" stroke-width="1"/><line class="faint" x1="936.0" y1="30" x2="936.0" y2="370" stroke-width="1"/>
 
@@ -18,7 +19,7 @@
   </path>
 
   <text class="ink" x="64" y="182" font-size="96" font-weight="bold" letter-spacing="-3">Luke</text>
-  <text class="ink" x="64" y="272" font-size="96" font-weight="bold" letter-spacing="-3">Zhang<tspan fill="#E63329">.</tspan></text>
+  <text class="ink" x="64" y="272" font-size="96" font-weight="bold" letter-spacing="-3">Zhang</text>
 
   <line class="rule" x1="64" y1="308" x2="520" y2="308" stroke-width="1.5"/>
 

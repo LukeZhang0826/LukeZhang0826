@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="56" viewBox="0 0 1000 56" font-family="Helvetica, Arial, sans-serif" role="img" aria-label="code, design, music">
+  <style>
+    :root { --ink: #12120F; }
+    @media (prefers-color-scheme: dark) { :root { --ink: #ECEAE3; } }
+    .ink { fill: var(--ink); }
+    .mut { fill: var(--ink); fill-opacity: 0.5; }
+    .rule { stroke: var(--ink); }
+    .faint { stroke: var(--ink); stroke-opacity: 0.09; }
+    .wire { stroke: var(--ink); fill: none; }
+    .box { stroke: var(--ink); stroke-opacity: 0.4; fill: none; }
+  </style>
+  <clipPath id="win"><rect x="64" y="0" width="872" height="56"/></clipPath>
+  <line class="rule" x1="64" y1="1" x2="936" y2="1" stroke-width="1" stroke-opacity="0.35"/>
+  <line class="rule" x1="64" y1="55" x2="936" y2="55" stroke-width="1" stroke-opacity="0.35"/>
+  <g clip-path="url(#win)">
+    <g>
+      <text class="mut" x="64" y="34" font-size="13" letter-spacing="4" textLength="1250" lengthAdjust="spacingAndGlyphs">CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ </text>
+      <text class="mut" x="1314" y="34" font-size="13" letter-spacing="4" textLength="1250" lengthAdjust="spacingAndGlyphs">CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ CODE ✦ DESIGN ✦ MUSIC ✦ </text>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="-1250 0" dur="30s" repeatCount="indefinite"/>
+    </g>
+  </g>
+</svg>
