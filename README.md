@@ -1,31 +1,7 @@
 <div align="center">
-<pre>
-                 -:===:.
-               +%@@@@@@@*:
-             .%@@@@@@@@@@@+
-             #@%=::==+#%%@@-
-            .@@+==-..-=++%@=
-            -%*===:--:===+@=
-            .==-.-:----.-=+-
-             -:--:::::---::.
-             .:--=:--==--:-
-             .-==:---::==-.
-               :+++=++++:.
-             -=::-:----:::.
-        .-=+#%%*=-....-:+%%*=-.
-    .:+#%%%%%%%%%%#*##%%%%%%%%%#+:.
-   -#%%%%%%%%%%%%%%%%%%%%%%%%%%%@@%+.
-  -#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%@+
-  *%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-
- -%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%+
-</pre>
 
-### Luke Zhang
+<img src="banner.svg" alt="Luke Zhang. Mechatronics Engineering, University of Waterloo. Code / Design / Music." width="100%"/>
 
-Mechatronics @ Waterloo. Code, design, music.
-
-[Portfolio](https://lukeypookster.com) ·
-[LinkedIn](https://linkedin.com/in/luke-shiyi-zhang) ·
-[Email](mailto:lukezhang0826@gmail.com)
+[**PORTFOLIO**](https://lukeypookster.com) · [**LINKEDIN**](https://linkedin.com/in/luke-shiyi-zhang) · [**EMAIL**](mailto:lukezhang0826@gmail.com)
 
 </div>
