@@ -1,10 +1,19 @@
-"""Generate banner.svg: Swiss International / Bauhaus poster with a
-rotating wireframe icosahedron baked as an SMIL path animation."""
+"""Generate the profile README SVGs (Swiss International, theme-adaptive):
+  banner.svg  - header: type + rotating wireframe icosahedron (SMIL-baked 3D)
+  marquee.svg - thin scrolling text strip
+Transparent backgrounds; ink/bone flips with prefers-color-scheme."""
 import math
 
-W, H = 1200, 480
-BONE, INK = "#ECEAE3", "#0A0A0A"
-RED, BLUE, YELLOW = "#E63329", "#1D4ED8", "#F2B705"
+RED = "#E63329"
+STYLE = """<style>
+    :root { --ink: #12120F; }
+    @media (prefers-color-scheme: dark) { :root { --ink: #ECEAE3; } }
+    .ink { fill: var(--ink); }
+    .mut { fill: var(--ink); fill-opacity: 0.5; }
+    .rule { stroke: var(--ink); }
+    .faint { stroke: var(--ink); stroke-opacity: 0.09; }
+    .wire { stroke: var(--ink); fill: none; }
+  </style>"""
 
 # --- icosahedron ---------------------------------------------------------
 p = (1 + 5 ** 0.5) / 2
@@ -20,10 +29,9 @@ for i in range(12):
     for j in d[1:6]:
         EDGES.add((min(i, j), max(i, j)))
 EDGES = sorted(EDGES)
-assert len(EDGES) == 30
 
-CX, CY, R = 930, 208, 150
-TILT = 0.42  # fixed tilt around X so the spin axis isn't boring-vertical
+CX, CY, R = 800, 196, 138
+TILT = 0.42
 FRAMES = 72
 
 def frame_path(t):
@@ -32,48 +40,54 @@ def frame_path(t):
     ct, st = math.cos(TILT), math.sin(TILT)
     pts = []
     for x, y, z in V:
-        # spin around Y, then tilt around X, orthographic drop of z
         x1, z1 = x * ca + z * sa, -x * sa + z * ca
-        y1, z2 = y * ct - z1 * st, y * st + z1 * ct
+        y1 = y * ct - z1 * st
         pts.append((round(CX + R * x1, 1), round(CY + R * y1, 1)))
     return " ".join(f"M{pts[i][0]} {pts[i][1]}L{pts[j][0]} {pts[j][1]}" for i, j in EDGES)
 
 values = ";".join(frame_path(i / FRAMES) for i in range(FRAMES + 1))
 
-# --- poster --------------------------------------------------------------
 grid = "".join(
-    f'<line x1="{80 + i * (1040 / 12):.1f}" y1="40" x2="{80 + i * (1040 / 12):.1f}" y2="{H - 40}" stroke="{INK}" stroke-opacity="0.08" stroke-width="1"/>'
+    f'<line class="faint" x1="{64 + i * (872 / 12):.1f}" y1="30" x2="{64 + i * (872 / 12):.1f}" y2="370" stroke-width="1"/>'
     for i in range(13))
 
-svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="Helvetica, Arial, sans-serif">
-  <rect width="{W}" height="{H}" fill="{BONE}"/>
+banner = f'''<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="400" viewBox="0 0 1000 400" font-family="Helvetica, Arial, sans-serif" role="img" aria-label="Luke Zhang. Mechatronics Engineering, University of Waterloo. Code, design, music.">
+  {STYLE}
   {grid}
 
-  <!-- bauhaus primaries -->
-  <circle cx="{CX}" cy="{CY}" r="118" fill="{YELLOW}"/>
-  <rect x="554" y="294" width="46" height="46" fill="{BLUE}"/>
-  <path d="M1096 372 L1140 372 L1118 334 Z" fill="{RED}"/>
+  <text class="mut" x="64" y="58" font-size="12" letter-spacing="2">LZ·0826</text>
+  <text class="mut" x="936" y="58" font-size="12" letter-spacing="2" text-anchor="end">43.4643° N, 80.5204° W</text>
 
-  <!-- rotating icosahedron (3D baked into SMIL frames) -->
-  <path fill="none" stroke="{INK}" stroke-width="1.6" stroke-linecap="round">
-    <animate attributeName="d" dur="14s" repeatCount="indefinite" calcMode="linear" values="{values}"/>
+  <path class="wire" stroke-width="1.4" stroke-linecap="round">
+    <animate attributeName="d" dur="16s" repeatCount="indefinite" calcMode="linear" values="{values}"/>
   </path>
 
-  <!-- type -->
-  <text x="80" y="188" font-size="118" font-weight="bold" letter-spacing="-4" fill="{INK}">Luke</text>
-  <text x="80" y="298" font-size="118" font-weight="bold" letter-spacing="-4" fill="{INK}">Zhang<tspan fill="{RED}">.</tspan></text>
+  <text class="ink" x="64" y="182" font-size="96" font-weight="bold" letter-spacing="-3">Luke</text>
+  <text class="ink" x="64" y="272" font-size="96" font-weight="bold" letter-spacing="-3">Zhang<tspan fill="{RED}">.</tspan></text>
 
-  <line x1="80" y1="340" x2="600" y2="340" stroke="{INK}" stroke-width="2"/>
+  <line class="rule" x1="64" y1="308" x2="520" y2="308" stroke-width="1.5"/>
 
-  <text x="80" y="376" font-size="17" letter-spacing="3" fill="{INK}">MECHATRONICS ENGINEERING, UNIVERSITY OF WATERLOO</text>
-  <text x="80" y="404" font-size="17" letter-spacing="3" fill="{INK}">CODE / DESIGN / MUSIC</text>
+  <text class="ink" x="64" y="342" font-size="14.5" letter-spacing="3">MECHATRONICS ENGINEERING, UNIVERSITY OF WATERLOO</text>
+  <text class="ink" x="64" y="368" font-size="14.5" letter-spacing="3">CODE / DESIGN / MUSIC</text>
 
-  <!-- swiss furniture -->
-  <text x="80" y="72" font-size="12" letter-spacing="2" fill="{INK}" fill-opacity="0.55">LZ·0826</text>
-  <text x="{W - 80}" y="72" font-size="12" letter-spacing="2" fill="{INK}" fill-opacity="0.55" text-anchor="end">43.4643° N, 80.5204° W</text>
-  <text x="{W - 80}" y="{H - 52}" font-size="12" letter-spacing="2" fill="{INK}" fill-opacity="0.55" text-anchor="end">GRID 12 / ORTHO 0.42</text>
+  <text class="mut" x="936" y="368" font-size="12" letter-spacing="2" text-anchor="end">GRID 12 / ORTHO 0.42</text>
 </svg>'''
 
-with open("banner.svg", "w", encoding="utf-8") as f:
-    f.write(svg)
-print(f"banner.svg written, {len(svg) / 1024:.0f} KB, {len(EDGES)} edges x {FRAMES} frames")
+# --- marquee -------------------------------------------------------------
+PHRASE = "CODE ✦ DESIGN ✦ MUSIC ✦ WATERLOO ✦ " * 5
+SEG = 1250  # textLength pins the rendered width so the loop is seamless
+marquee = f'''<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="56" viewBox="0 0 1000 56" font-family="Helvetica, Arial, sans-serif" role="img" aria-label="code, design, music, waterloo">
+  {STYLE}
+  <line class="rule" x1="0" y1="1" x2="1000" y2="1" stroke-width="1" stroke-opacity="0.35"/>
+  <line class="rule" x1="0" y1="55" x2="1000" y2="55" stroke-width="1" stroke-opacity="0.35"/>
+  <g>
+    <text class="mut" x="0" y="34" font-size="13" letter-spacing="4" textLength="{SEG}" lengthAdjust="spacingAndGlyphs">{PHRASE}</text>
+    <text class="mut" x="{SEG}" y="34" font-size="13" letter-spacing="4" textLength="{SEG}" lengthAdjust="spacingAndGlyphs">{PHRASE}</text>
+    <animateTransform attributeName="transform" type="translate" from="0 0" to="-{SEG} 0" dur="30s" repeatCount="indefinite"/>
+  </g>
+</svg>'''
+
+for name, svg in (("banner.svg", banner), ("marquee.svg", marquee)):
+    with open(name, "w", encoding="utf-8") as f:
+        f.write(svg)
+    print(f"{name}: {len(svg) / 1024:.0f} KB")
