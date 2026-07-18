@@ -4,4 +4,6 @@
 
 [**PORTFOLIO**](https://lukeypookster.com) · [**LINKEDIN**](https://linkedin.com/in/luke-shiyi-zhang) · [**EMAIL**](mailto:lukezhang0826@gmail.com)
 
+<img src="marquee.svg" alt="" width="100%"/>
+
 </div>
